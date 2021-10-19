@@ -1,58 +1,29 @@
-const convertRomain = require('./index');
+const isBracket = require('./index');
 
-test('Test success  case 1', () => {
-    //arrange and act
-    var result = convertRomain("XXI");
+describe("is a valid Bracket ", () => {
+    test('It returns true using 2 brackets', () => {
+        expect(isBracket('{}')).toEqual(true)
+    });
+    
+    test('It returns true using mix of letter and pair of brackets', () => {
+        expect(isBracket('{kkkk{}}')).toEqual(true)
+    });
 
-    //assert
-    expect(result).toBe(21);
-});
+    test('It returns true using mix of 2 words inside brackets', () => {
+        expect(isBracket('{{gggooo}}{ll{i}}')).toEqual(true)
+    });
+})
 
-test('Test success  case 2', () => {
-    //arrange and act
-    var result = convertRomain("XL");
+describe("is not a valid Bracket ", () => {
+    test('It returns false using 3 brackets', () => {
+        expect(isBracket('{}{')).toEqual(false)
+    });
 
-    //assert
-    expect(result).toBe(40);
-});
+    test('It returns false using 6 unsort brackets ', () => {
+        expect(isBracket('}}}{{{')).toEqual(false)
+    });
 
-test('Test success  8 letters', () => {
-    //arrange and act
-    var result = convertRomain("MMMCMXCIX");
-
-    //assert
-    expect(result).toBe(3999);
-});
-
-test('Test success  case 3', () => {
-    //arrange and act
-    var result = convertRomain("LVIII");
-
-    //assert
-    expect(result).toBe(58);
-});
-
-test('Test failed with letters not valid', () => {
-    //arrange and act
-    var result = convertRomain("XXKI");
-
-    //assert
-    expect(result).toBe(false);
-});
-
-test('Test failed with uppercase/lowercase', () => {
-    //arrange and act
-    var result = convertRomain("xXI");
-
-    //assert
-    expect(result).toBe(21);
-});
-
-test('Test failed with letters disordered ', () => {
-    //arrange and act
-    var result = convertRomain("CHIWX");
-
-    //assert
-    expect(result).toBe(false);
-});
-
+    test('It returns false with a mix a  pairs with letters using incorrect syntax', () => {
+        expect(isBracket('{}{}oooo{ppp}}}')).toEqual(false)
+    });
+})

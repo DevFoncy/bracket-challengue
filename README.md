@@ -1,7 +1,14 @@
-# Romain Algorithm 
+# Bracket Algorithm Challengue 
 
 
-Romain numeral algorithm that converts to integer numbers using Javascript and Node.js
+Write a javascript function that returns a boolean when the received parameter is valid.
+* The received parameter must be a string, otherwise it must throw an exception.
+* Let supose the received string is code. The code is valid only if every opened bracket has its corresponding closing bracket.
+
+
+## Solution
+
+Using a structure data with the approach FILO (First In Last Out) In this case the stack is best solution ( push / pop array functions in JS)
 
 
 ## Prerequisites

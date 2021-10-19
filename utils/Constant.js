@@ -1,5 +1,4 @@
-const LETTERS_ROMAIN = {"M": 1000, "D": 500, "C": 100, "L" :50, "X" :10, "V":5, "I" : 1};
-const REGEX_EXPRESSION_LETTERS = /^[MDCLXVI)(]+$/;
-const REGEX_EXPRESSION_ORDER = /^M{0,4}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})$/;
+const SYMBOL_LEFT = "{";
+const SYMBOL_RIGHT = "}";
 
-module.exports = {LETTERS_ROMAIN,REGEX_EXPRESSION_LETTERS,REGEX_EXPRESSION_ORDER};
+module.exports = {SYMBOL_LEFT,SYMBOL_RIGHT};
